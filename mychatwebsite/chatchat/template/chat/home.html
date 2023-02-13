@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Custom styles for this template -->
+</head>
+
+<body>
+    <main>
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleInputEmail1">คำถาม :</label>
+                    <input type="text" class="form-control" id="qa" name="qa">
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <center>
+                {% for pd in qa %}
+                <h1>{{pd.title}}</h1><br>
+                <p>รายละเอียด : {{pd.qa}}<br>
+                    {% endfor %}
+            </center>
+        </div>
+    </main>
+</body>
+
+</html>
